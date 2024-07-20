@@ -149,7 +149,7 @@ class Mamba(nn.Module):
             ).contiguous()
             A_b_log = torch.log(A_b)  # Keep A_b_log in fp32
             self.A_b_log = nn.Parameter(A_b_log)
-	    self.A_b_log = mask_diagnomal (A_b_log)
+	    self.A_b_log = mask_diagonal(A_b_log)
             self.A_b_log._no_weight_decay = True 
 
             self.conv1d_b = nn.Conv1d(
